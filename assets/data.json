@@ -1,0 +1,81 @@
+{
+  "info": {
+    "name": "Nicolas Joyard",
+    "roles": ["Software Architect"],
+    "links": {
+      "@njoyard": "https://twitter.com/njoyard",
+      "github": "https://github.com/njoyard",
+      "joyard.nicolas@gmail.com": "mailto:joyard.nicolas@gmail.com"
+    },
+    "location": "Asnières-sur-Saône, France"
+  },
+
+  "sections": {
+    "Projects": {
+      "nestor": {
+        "icon": "assets/icons/nestor.svg",
+        "links": ["http://nestor.njoyard.fr/", "https://github.com/nestormc/"],
+        "description": "Web-based media center",
+        "text": "assets/markdown/nestor.md",
+        "skills": ["nodejs, express and socket.io", "mongodb", "html5 and css3"]
+      },
+
+      "ist.js": {
+        "icon": "assets/icons/ist.png",
+        "links": ["http://ist.njoyard.fr/", "https://github.com/njoyard/ist/"],
+        "description": "DOM templating engine",
+        "text": "assets/markdown/ist.md",
+        "skills": ["javascript", "requirejs"]
+      },
+
+      "yarm": {
+        "icon": "assets/icons/yarm.png",
+        "links": ["http://yarm.njoyard.fr/", "https://github.com/njoyard/yarm/"],
+        "description": "REST middleware for Express, nodejs and mongoose",
+        "text": "assets/markdown/yarm.md",
+        "skills": ["nodejs", "express"]
+      }
+    },
+
+    "Contributions": {
+      "node-fluent-ffmpeg": {
+        "links": ["http://github.com/schaermu/node-fluent-ffmpeg"],
+        "description": "nodejs wrapper library for ffmpeg",
+        "text": "assets/markdown/fluent-ffmpeg.md"
+      },
+
+      "mongoose": {
+        "icon": "assets/icons/mongoose.png",
+        "links": ["http://mongoosejs.org"],
+        "description": "MongoDB ODM for nodejs",
+        "text": "assets/markdown/mongoose.md"
+      }
+    },
+
+    "Work": {
+      "obs-architect": {
+        "title": "Orange Applications for Business",
+        "icon": "assets/icons/obs.png",
+        "description": "since sep. 2013 — Software Architect",
+        "location": "Lyon, France",
+        "text": "assets/markdown/obs-architect.md"
+      },
+      "obs-dev": {
+        "title": "Orange Applications for Business",
+        "icon": "assets/icons/obs.png",
+        "description": "feb. 2008 to sep. 2013 — Software Developer",
+        "text": "assets/markdown/mongoose.md"
+      },
+      "sagem": {
+        "title": "Sagem Mobile Phones",
+        "icon": "assets/icons/sagem.png",
+        "description": "mar. 2006 to feb. 2008 — Embedded OS & DSP Developer",
+        "text": "assets/markdown/mongoose.md"
+      }
+    },
+
+    "School": {
+
+    }
+  }
+}

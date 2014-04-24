@@ -1,0 +1,1 @@
+yarm is a nodejs module to ease writing of RESTful applications.  It is designed to work with express and mongoose and has an easy to use syntax.  Its API is very flexible and extensible, as every aspect of the REST interfaces it produces can be customized or replaced.

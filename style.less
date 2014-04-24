@@ -1,0 +1,268 @@
+//@import url(http://fonts.googleapis.com/css?family=Open+Sans:800);
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Open Sans Extrabold'), local('OpenSans-Extrabold'), url(fonts/opensans.woff) format('woff');
+}
+
+//@import url(http://fonts.googleapis.com/css?family=Alegreya:400italic,400,700);
+
+@font-face {
+  font-family: 'Alegreya';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Alegreya'), local('Alegreya-Regular'), url(fonts/alegreya-regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'Alegreya';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Alegreya Bold'), local('Alegreya-Bold'), url(fonts/alegreya-bold.woff) format('woff');
+}
+@font-face {
+  font-family: 'Alegreya';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Alegreya Italic'), local('Alegreya-Italic'), url(fonts/alegreya-italic.woff) format('woff');
+}
+
+
+/* Colors */
+
+@black: hsv(10, 25%, 25%);
+@colorHue: 10;
+@lightHue: 45;
+@backgroundGray: hsv(0, 0, 100%);
+@backgroundColor: hsv(@lightHue, 5%, 100%);
+@borderColor: hsv(@lightHue, 5%, 95%);
+@accentColor: hsv(@colorHue, 100%, 90%);
+@fadeColor: hsv(0, 0, 50%);
+
+/* Metrics */
+@pictureSize: 8em;
+
+/* Reset UA margins and line heights */
+h1, h2, h3 {
+	line-height: 1.2em;
+	color: @black;
+}
+
+* {
+	/* border-box FTW */
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+
+	/* reset UA margins */
+	margin: 0;
+	padding: 0;
+}
+
+
+/* Global style */
+body {
+	background-color: @backgroundGray;
+
+	font-family: 'Alegreya', 'Georgia', 'serif';
+	font-size: 14pt;
+}
+
+
+/* Links */
+a:link, a:visited {
+	color: @fadeColor;
+}
+
+a:active, a:hover {
+	color: @accentColor;
+}
+
+/* Header */
+
+.header {
+	margin: 3em 6em 3em 6em;
+
+	.left {
+		display: inline-block;
+		width: 40%;
+
+		padding-right: 5em;
+		text-align: right;
+
+		img {
+			height: @pictureSize;
+			border-radius: @pictureSize/2;
+		}
+	}
+
+	.right {
+		display: inline-block;
+		width: 60%;
+
+		h1.name {
+			font-family: 'Open Sans', 'sans-serif';
+			font-weight: 800;
+			font-size: 32pt;
+			margin-bottom: .5em;
+		}
+
+		.role {
+			font-style: italic;
+			color: @accentColor;
+		}
+
+		.links {
+			list-style-type: none;
+			color: @fadeColor;
+			margin-top: 1em;
+
+			li {
+				display: inline-block;
+
+				& + li:before {
+					content: "•";
+					margin: 0 .25em;
+				}
+			}
+		}
+
+		.location {
+			font-style: italic;
+			color: @fadeColor;
+		}
+	}
+}
+
+/* Menu */
+
+.menu {
+	font-family: 'Open Sans', 'sans-serif';
+	font-size: 14pt;
+	text-align: center;
+	line-height: 2em;
+
+	background-color: @black;
+
+	a:link, a:visited {
+		color: white;
+		text-decoration: none;
+		margin: 0 1em;
+	}
+
+	a:active, a:hover {
+		color: @backgroundColor;
+	}
+}
+
+/* Sections */
+.section {
+	display: none;
+
+	&.current {
+		display: block;
+	}
+}
+
+/* Section headers */
+h2 {
+	font-family: 'Open Sans', 'sans-serif';
+	font-weight: 800;
+	font-size: 28pt;
+	text-align: center;
+	margin: 2em 0 2em 0;
+}
+
+/* Section items */
+.items {
+	background-color: @backgroundColor;
+	margin-bottom: 6em;
+}
+
+.item {
+	padding: 1em;
+	margin: 0 6em;
+
+
+	& + .item {
+		border-top: .25em solid @borderColor;
+	}
+
+	.left {
+		display: inline-block;
+		vertical-align: top;
+		width: 40%;
+
+		padding-right: 5em;
+		text-align: right;
+
+		img, .placeholder {
+			height: 4em;
+		}
+
+		.content {
+			display: none;
+
+			line-height: 1.8em;
+			margin-top: 1.2em;
+
+			.links, .skills, .location {
+				color: @fadeColor;
+				list-style-type: none;
+			}
+
+			.skills {
+				font-style: italic;
+			}
+
+			.links + .skills, .location + .skills, .location + .links {
+				margin-top: 2em;
+			}
+		}
+	}
+
+	.right {
+		display: inline-block;
+		vertical-align: top;
+		width: 60%;
+
+		h3 {
+			font-family: 'Open Sans', 'sans-serif';
+			font-weight: 800;
+			font-size: 14pt;
+			line-height: 2em;
+		}
+
+		.description {
+			color: @accentColor;
+			font-style: italic;
+			line-height: 2em;
+		}
+
+		.content {
+			display: none;
+
+			line-height: 1.8em;
+
+			p {
+				margin-top: 1.5em;
+			}
+
+			ul {
+				list-style-type: square;
+				margin-left: 1em;
+			}
+		}
+	}
+
+	&.expanded {
+		.skills {
+			display: block;
+		}
+
+		.content {
+			display: block;
+		}
+	}
+}

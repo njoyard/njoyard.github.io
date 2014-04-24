@@ -1,0 +1,75 @@
+/* Skills list component */
+@define "skills"
+	@if typeof skills !== "undefined"
+		ul.skills
+			@each skills
+				li "{{ this }}"
+
+/* Item list component */
+@define "items"
+	[id={{ key }}][class=section {{ loop.index === 0 ? "current" : "" }}]
+		h2 "{{ key }}"
+
+		.items
+			@eachkey value
+				.item
+					.left
+						@if "icon" in value
+							img[src={{ value.icon }}]
+						@else
+							.placeholder
+
+						.content
+							@if "location" in value
+								.location "{{ value.location }}"
+
+							@if "links" in value
+								ul.links
+									@each value.links
+										li
+											a[href={{ this }}][target=_blank]
+												"{{ this.replace(/(^https?:\\/\\/|\\/$)/g, '') }}"
+
+							@with value
+								@use "skills"
+
+					.right
+						h3.title
+							@if "title" in value
+								"{{ value.title }}"
+							@else
+								"{{ key }}"
+
+						.description "{{ value.description }}"
+						.content
+							@dom value.content
+
+/* Header */
+
+@with info
+	.header
+		.left
+			img[src=assets/me.jpg]
+
+		.right
+			h1.name "{{ name }}"
+
+			@each roles
+				.role "{{ this }}"
+
+			ul.links
+				@eachkey links
+					li
+						a[href={{ value }}] "{{ key }}"
+
+			.location "{{ location }}"
+
+
+/* Menu */
+.menu
+	@eachkey sections
+		a[data-section={{ key }}][href=#]
+			"{{ key }}"
+
+@eachkey sections
+	@use "items"
