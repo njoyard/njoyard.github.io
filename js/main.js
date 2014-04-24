@@ -6,12 +6,12 @@ requirejs.config({
 	baseUrl: "",
 	paths: {
 		"dom": "js/dom",
-		"async": "bower_components/async/lib/async",
-		"ist": "bower_components/ist/ist",
-		"json": "bower_components/requirejs-plugins/src/json",
-		"markdownConverter": "bower_components/requirejs-plugins/lib/Markdown.Converter",
-		"mdown": "bower_components/requirejs-plugins/src/mdown",
-		"text": "bower_components/requirejs-text/text"
+		"async": "lib/async",
+		"ist": "lib/ist",
+		"json": "lib/json",
+		"markdownConverter": "lib/Markdown.Converter",
+		"mdown": "lib/mdown",
+		"text": "lib/text"
 	}
 });
 
