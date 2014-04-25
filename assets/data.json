@@ -64,18 +64,27 @@
         "title": "Orange Applications for Business",
         "icon": "assets/icons/obs.png",
         "description": "feb. 2008 to sep. 2013 — Software Developer",
-        "text": "assets/markdown/mongoose.md"
+        "location": "Lyon, France",
+        "text": "assets/markdown/obs-dev.md"
       },
       "sagem": {
         "title": "Sagem Mobile Phones",
         "icon": "assets/icons/sagem.png",
         "description": "mar. 2006 to feb. 2008 — Embedded OS & Toolchain Developer",
-        "text": "assets/markdown/mongoose.md"
+        "location": "Cergy, France",
+        "text": "assets/markdown/sagem.md"
       }
     },
 
     "School": {
-
+      "enserg": {
+        "title": "Master's degree of Engineering at ENSERG (now PHELMA)",
+        "icon": "assets/icons/phelma.png",
+        "links": ["http://phelma.grenoble-inp.fr/"],
+        "description": "sep. 2003 to feb. 2006",
+        "location": "Grenoble, France",
+        "text": "assets/markdown/enserg.md"
+      }
     }
   }
 }

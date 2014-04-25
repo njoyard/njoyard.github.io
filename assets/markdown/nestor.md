@@ -5,10 +5,11 @@ nestor uses the following technologies and libraries:
 * [nodejs] with [express] and [socket.io]
 * [MongoDB] and the [mongoose] ODM
 * modern HTML with audio/video players, storage, offline and fullscreen APIs
+* [Chromecast] support
 
+[chromecast]: http://chromecast.com/
 [express]: http://expressjs.com/
 [mongodb]: http://www.mongodb.org/
 [mongoose]: http://mongoosejs.com/
-[node-torrent]: http://github.com/superafroman/node-torrent
 [nodejs]: http://nodejs.org/
 [socket.io]: http://socket.io/
