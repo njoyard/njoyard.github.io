@@ -44,14 +44,15 @@ require(["ist!template", "json!assets/data.json", "async", "dom"], function(temp
 
 					dom.$(".section#" + this.dataset.section).classList.add("current");
 
+					e.returnValue = false;
 					e.preventDefault();
 					return false;
 				}
 			},
 
 			".item": {
-				"click": function(e) {
-					var current = dom.$(".expanded");
+				"click": function() {
+					var current = dom.$(dom.$P(this, ".items"), ".expanded");
 
 					if (current) {
 						current.classList.remove("expanded");
