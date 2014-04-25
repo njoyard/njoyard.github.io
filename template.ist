@@ -1,9 +1,45 @@
 /* Skills list component */
 @define "skills"
-	@if typeof skills !== "undefined"
+	@if "skills" in value
 		ul.skills
-			@each skills
+			@each value.skills
 				li "{{ this }}"
+
+/* Link list component */
+@define "links"
+	@if "links" in value
+		ul.links
+			@each value.links
+				li
+					a[href={{ this }}][target=_blank]
+						"{{ this.replace(/(^https?:\\/\\/|\\/$)/g, '') }}"
+
+/* Item component */
+@define "item"
+	.item
+		.left
+			@if "icon" in value
+				img[src={{ value.icon }}]
+			@else
+				.placeholder
+
+			.content
+				@if "location" in value
+					.location "{{ value.location }}"
+
+				@use "links"
+				@use "skills"
+
+		.right
+			h3.title
+				@if "title" in value
+					"{{ value.title }}"
+				@else
+					"{{ key }}"
+
+			.description "{{ value.description }}"
+			.content
+				@dom value.content
 
 /* Item list component */
 @define "items"
@@ -12,37 +48,7 @@
 
 		.items
 			@eachkey value
-				.item
-					.left
-						@if "icon" in value
-							img[src={{ value.icon }}]
-						@else
-							.placeholder
-
-						.content
-							@if "location" in value
-								.location "{{ value.location }}"
-
-							@if "links" in value
-								ul.links
-									@each value.links
-										li
-											a[href={{ this }}][target=_blank]
-												"{{ this.replace(/(^https?:\\/\\/|\\/$)/g, '') }}"
-
-							@with value
-								@use "skills"
-
-					.right
-						h3.title
-							@if "title" in value
-								"{{ value.title }}"
-							@else
-								"{{ key }}"
-
-						.description "{{ value.description }}"
-						.content
-							@dom value.content
+				@use "item"
 
 /* Header */
 
