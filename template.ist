@@ -17,6 +17,7 @@
 /* Item component */
 @define "item"
 	[class=item {{ loop.index === 0 ? "expanded" : "" }}]
+		.arrow "▼"
 		.left
 			@if "icon" in value
 				img[src={{ value.icon }}]

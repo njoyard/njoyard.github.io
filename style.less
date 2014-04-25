@@ -183,10 +183,21 @@ h2 {
 .item {
 	padding: 1em;
 	margin: 0 6em;
-
+	cursor: hand;
 
 	& + .item {
 		border-top: .25em solid @borderColor;
+	}
+
+	.arrow {
+		display: none;
+		position: absolute;
+		color: @borderColor;
+		font-size: 3em;
+	}
+
+	&:hover .arrow {
+		display: inline;
 	}
 
 	.left {
@@ -257,6 +268,10 @@ h2 {
 	}
 
 	&.expanded {
+		.arrow {
+			display: none;
+		}
+
 		.skills {
 			display: block;
 		}
